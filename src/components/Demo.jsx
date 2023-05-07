@@ -60,6 +60,34 @@ const Demo = () => {
           </button>
         </form>
       </div>
+
+      {/* { Display the summary} */}
+
+      <div className='my-10 max-w-full flex justify-center items-center'>
+        {isFetching ? (
+          <img
+            src={loader}
+            alt='loader'
+            className='w-32 h-32 object-contain'
+          />
+        ) : error ? (
+          <p className='font-inter text-lg text-red-500'>
+            Something went wrong
+          </p>
+        ) : ( article.summary && (
+          <div className='flex flex-col gap-2'>
+            <h2 className='font-satoshi text-bold text-gray-600 text-xl'>
+              Article <span className='blue_gradient'>Summary</span>
+            </h2>
+            <div className='summary-box'>
+              <p className='text-gray-700 text-sm font-medium font-inter'>
+                {article.summary}
+              </p>
+            </div>
+          </div>
+        )
+        )}
+      </div>
     </section>
   )
 }
