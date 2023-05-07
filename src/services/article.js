@@ -19,4 +19,4 @@ export const articleApi = createApi({
     }),
 })
 
-export const { uselazyGetSummariesQuery } = articleApi;
+export const { useLazyGetSummariesQuery } = articleApi;
